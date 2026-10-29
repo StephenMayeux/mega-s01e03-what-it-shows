@@ -42,7 +42,7 @@ Not one fix. Each problem below has its own ticket. Merge new reports by problem
 - Merging on subject ([decision 0001](/kb/decisions/0001-dedupe-by-subject)) put all three into one ticket,
   because all three get subjects like "Wrong date again".
 - The intake tag is a guess from the reporter's browser. It is wrong for many reports in every problem.
-  Use the tenant and the channel (`#lib/kb/problems`), not the tag.
+  Use the tenant and the channel (`#lib/kb/causes`), not the tag.
 - The export repeats some reports. Count by id.
 
 <RenderStamp {signature} />
