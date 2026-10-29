@@ -7,29 +7,30 @@
 		<link href="../../../_app/immutable/assets/runbook.9BJ9BomY.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/Callout.89E4ZsOX.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/5.V9EoK-S7.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/start.DjcerlBZ.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/B5iGzkkH.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.B1jMwWMt.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CUY5vc_W.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/WLr3OCk2.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/CaskBBMd.js">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/app.BBDO7nW-.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.Wk9xIPDu.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/CxLjh0hF.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BxHaDExg.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BviaqjHR.js">
 		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.fp_j_brR.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BAC74Pmu.js">
-		<link rel="modulepreload" href="../../../_app/immutable/nodes/5.Bk2vThrp.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/DcJ0iVBZ.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/5.C_twtAI7.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/BF57KA33.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/CSay-iu-.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BWUPc4Cf.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/CcZCyuhj.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/iXLSwIXB.js"><!--[--><!--]--><title>#4471 split · three problems, not one · support kb</title>
   </head>
   <body>
-    <div style="display: contents"><!--[--><!--[--><!----><!----><div class="kb svelte-60g32v"><header><a class="crumb svelte-60g32v" href="/kb">support desk · kb</a> <h1 class="svelte-60g32v">#4471 split · three problems, not one</h1> <p class="meta svelte-60g32v"><span>owner <b>StephenMayeux</b></span> <span class="status open svelte-60g32v">open</span> <span class="svelte-60g32v">reviewed 2026-10-28 · 1 days ago</span></p></header> <!--[!--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says “known · one issue, one fix queued”. It holds three problems.
-Fixing the parser closes one of them. The other two stay broken and keep coming in as “the same bug”.</p> <aside class="warn svelte-hdh0t2"><!---->Not one fix. Each problem below has its own ticket. Merge new reports by problem, not by subject.<!----></aside><!----> <h2>The problems</h2> <p class="sum svelte-1xyg5xr"><strong>412</strong> reports in #4471 (427 rows in the export, 15 of them
+    <div style="display: contents"><!--[--><!--[--><!----><!----><div class="kb svelte-60g32v"><header><a class="crumb svelte-60g32v" href="/kb">support desk · kb</a> <h1 class="svelte-60g32v">#4471 split · three problems, not one</h1> <p class="meta svelte-60g32v"><span>owner <b>StephenMayeux</b></span> <span class="status open svelte-60g32v">open</span> <span class="svelte-60g32v">reviewed 2026-10-28 · 1 days ago</span></p></header> <!--[!--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> said “known · one issue, one fix queued”. It held three problems.
+Engineering closed #4471 on 5 October. That closed two of them, not the third:</p> <ul><li><strong>Parser:</strong> fixed (<code>fix(dates): parse dd/mm for eu locales</code>). Ticket closed.</li> <li><strong>Hint:</strong> won’t fix. The booking-v3 form is retired. Ticket closed.</li> <li><strong>Shift:</strong> still open. The parser fix does not touch it: a one-day move is not a day/month swap.</li></ul> <aside class="warn svelte-hdh0t2"><!---->Dates that move by one day are still a live bug. A new report like that is not #4471 come back:
+merge it into the shift ticket. Merge by problem, not by subject.<!----></aside><!----> <h2>The problems</h2> <p class="sum svelte-1xyg5xr"><strong>412</strong> reports in #4471 (427 rows in the export, 15 of them
   repeats) · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr class="svelte-1xyg5xr"><td class="svelte-1xyg5xr"><!--[!--><b>Shared parser reads day-first dates month first</b><br><span class="what svelte-1xyg5xr">Day and month swap: 7 April goes out as 4 July.</span><!--]--> <!--[!--><!--]--></td><td class="svelte-1xyg5xr">379</td><td class="svelte-1xyg5xr">11</td><td class="svelte-1xyg5xr">2026-04-01 → 2026-10-04</td><td class="svelte-1xyg5xr"><!--[--><a href="https://github.com/StephenMayeux/mega-s01e03-what-it-shows/issues/1">#1</a><!--]--></td></tr><tr class="svelte-1xyg5xr sub"><td class="svelte-1xyg5xr"><!--[!--><b>Dates move by one day</b><br><span class="what svelte-1xyg5xr">Tuesday becomes Monday; Lisbon and Toronto get different days for one meeting.</span><!--]--> <!--[--><br><span class="what svelte-1xyg5xr">Also counted under <code>parser</code>: the desk files these by tenant.</span><!--]--></td><td class="svelte-1xyg5xr">5</td><td class="svelte-1xyg5xr"></td><td class="svelte-1xyg5xr"></td><td class="svelte-1xyg5xr"><!--[--><a href="https://github.com/StephenMayeux/mega-s01e03-what-it-shows/issues/3">#3</a><!--]--></td></tr><tr class="svelte-1xyg5xr"><td class="svelte-1xyg5xr"><!--[!--><b>booking-v3 date hint says MM/DD/YYYY to day-first tenants</b><br><span class="what svelte-1xyg5xr">People type what the hint says; the form reads it day first. Same swap, different fix.</span><!--]--> <!--[!--><!--]--></td><td class="svelte-1xyg5xr">33</td><td class="svelte-1xyg5xr">3</td><td class="svelte-1xyg5xr">2026-04-17 → 2026-09-22</td><td class="svelte-1xyg5xr"><!--[--><a href="https://github.com/StephenMayeux/mega-s01e03-what-it-shows/issues/2">#2</a><!--]--></td></tr><!--]--></tbody></table><!----> <h2>How to tell them apart</h2> <ul><li><strong>Parser:</strong> day and month swap. Every day-first tenant, every channel except the booking-v3 form.</li> <li><strong>Hint:</strong> the same swap, but only through the booking-v3 form (Alder Physio, Copper Studio, Pale Harbour).
 The form prints <code>MM/DD/YYYY</code> under the date field, people type month first, and the form reads day first.
-Fixing the parser does not fix this. The hint text does.</li> <li><strong>Shift:</strong> the date moves by one day. A day/month swap can never do that. Look for weekdays one apart,
+The parser fix does not cover it; retiring the form ends it.</li> <li><strong>Shift:</strong> the date moves by one day. A day/month swap can never do that. Look for weekdays one apart,
 “before I booked it”, or two cities seeing different days. The desk listed these in its notes and then
 filed them under parser anyway.</li></ul> <h2>What went wrong in triage</h2> <ul><li>Merging on subject (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>) put all three into one ticket,
 because all three get subjects like “Wrong date again”.</li> <li>The intake tag is a guess from the reporter’s browser. It is wrong for many reports in every problem.
@@ -37,15 +38,15 @@ Use the tenant and the channel (<code>#lib/kb/causes</code>), not the tag.</li> 
 			
 			<script>
 				{
-					__sveltekit_9zlifk = {
+					__sveltekit_1uc5oi9 = {
 						base: new URL("../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.DjcerlBZ.js"),
-						import("../../../_app/immutable/entry/app.BBDO7nW-.js")
+						import("../../../_app/immutable/entry/start.B1jMwWMt.js"),
+						import("../../../_app/immutable/entry/app.Wk9xIPDu.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
