@@ -1,0 +1,48 @@
+---
+layout: runbook
+title: '#4471 split · three problems, not one'
+owner: StephenMayeux
+status: open
+reviewed: 2026-10-28
+signature: v1.eyJzdWIiOiIyNTY4IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyNDAwMzMsImV4cCI6MTc5MzMyNjQzM30.5D7ZE6sU8vseesfWDa2p8NLrMi8optWmK8fy0-YvPwg
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const REPO = 'https://github.com/StephenMayeux/mega-s01e03-what-it-shows/issues';
+  const tickets = { parser: `${REPO}/1`, hint: `${REPO}/2`, shift: `${REPO}/3` };
+</script>
+
+[#4471](/kb/incidents/4471) says "known · one issue, one fix queued". It holds three problems.
+Fixing the parser closes one of them. The other two stay broken and keep coming in as "the same bug".
+
+<Callout kind="warn">
+Not one fix. Each problem below has its own ticket. Merge new reports by problem, not by subject.
+</Callout>
+
+## The problems
+
+<ProblemTable ticket={4471} {tickets} />
+
+## How to tell them apart
+
+- **Parser:** day and month swap. Every day-first tenant, every channel except the booking-v3 form.
+- **Hint:** the same swap, but only through the booking-v3 form (Alder Physio, Copper Studio, Pale Harbour).
+  The form prints `MM/DD/YYYY` under the date field, people type month first, and the form reads day first.
+  Fixing the parser does not fix this. The hint text does.
+- **Shift:** the date moves by one day. A day/month swap can never do that. Look for weekdays one apart,
+  "before I booked it", or two cities seeing different days. The desk listed these in its notes and then
+  filed them under parser anyway.
+
+## What went wrong in triage
+
+- Merging on subject ([decision 0001](/kb/decisions/0001-dedupe-by-subject)) put all three into one ticket,
+  because all three get subjects like "Wrong date again".
+- The intake tag is a guess from the reporter's browser. It is wrong for many reports in every problem.
+  Use the tenant and the channel (`#lib/kb/problems`), not the tag.
+- The export repeats some reports. Count by id.
+
+<RenderStamp {signature} />
